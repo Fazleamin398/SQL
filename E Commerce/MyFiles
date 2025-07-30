@@ -1,0 +1,84 @@
+
+# 🛒 SQL Practice Project: E-Commerce Analytics
+
+This project simulates a small e-commerce database for hands-on SQL practice, ranging from basic queries to advanced analytics using CTEs and window functions.
+
+---
+
+## 🧾 Table Descriptions
+
+### 1. `customers`
+Stores customer information.
+
+| Column        | Type     | Description                          |
+|---------------|----------|--------------------------------------|
+| customer_id   | INT (PK) | Unique ID for each customer          |
+| name          | VARCHAR  | Full name of the customer            |
+| email         | VARCHAR  | Email address                        |
+| signup_date   | DATE     | Date the customer signed up          |
+| city          | VARCHAR  | City where the customer lives        |
+| country       | VARCHAR  | Country where the customer lives     |
+
+---
+
+### 2. `products`
+Lists products available for purchase.
+
+| Column        | Type     | Description                          |
+|---------------|----------|--------------------------------------|
+| product_id    | INT (PK) | Unique ID for each product           |
+| product_name  | VARCHAR  | Name of the product                  |
+| category      | VARCHAR  | Category (e.g., Electronics, Furniture) |
+| price         | DECIMAL  | Unit price of the product            |
+
+---
+
+### 3. `orders`
+Contains order-level information.
+
+| Column         | Type     | Description                          |
+|----------------|----------|--------------------------------------|
+| order_id       | INT (PK) | Unique ID for each order             |
+| customer_id    | INT (FK) | Links to the customer who placed the order |
+| order_date     | DATE     | Date the order was placed            |
+| total_amount   | DECIMAL  | Total value of the order             |
+| payment_method | VARCHAR  | Payment method used (e.g., Cash, Credit Card) |
+
+---
+
+### 4. `order_items`
+Details of individual products within each order.
+
+| Column         | Type     | Description                          |
+|----------------|----------|--------------------------------------|
+| order_item_id  | INT (PK) | Unique ID for each item in an order  |
+| order_id       | INT (FK) | Links to the order                   |
+| product_id     | INT (FK) | Links to the product                 |
+| quantity       | INT      | Number of units ordered              |
+| price_each     | DECIMAL  | Price per unit at the time of order  |
+
+---
+
+### 5. `support_tickets`
+Customer service interaction log.
+
+| Column       | Type       | Description                          |
+|--------------|------------|--------------------------------------|
+| ticket_id    | INT (PK)   | Unique ID for each support ticket    |
+| customer_id  | INT (FK)   | Links to the customer who raised issue |
+| created_at   | TIMESTAMP  | When the ticket was created          |
+| resolved     | BOOLEAN    | Whether the issue has been resolved  |
+| issue_type   | VARCHAR    | Description of the customer issue    |
+
+---
+
+## ✅ Practice Topics
+
+- SQL Joins (INNER, LEFT, RIGHT)
+- Filtering, sorting, grouping
+- Aggregates: SUM, AVG, COUNT
+- Subqueries & CTEs
+- Window Functions: ROW_NUMBER, RANK
+- Reporting and Analytics
+
+
